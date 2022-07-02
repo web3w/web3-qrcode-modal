@@ -51,7 +51,7 @@ export function Modal(props: ModalProps) {
     const [errorMessage, setErrorMessage] = useState("");
 
     const getLinksIfNeeded = () => {
-        debugger
+
         if (fetched || loading || (whitelist && !whitelist.length) || links.length > 0) {
             return;
         }
@@ -67,7 +67,7 @@ export function Modal(props: ModalProps) {
                     setLoading(false);
                     setFetched(true);
                     setErrorMessage(!_links.length ? props.text.no_supported_wallets : "");
-                    debugger
+
                     setLinks(_links);
                     const hasSingleLink = _links.length === 1;
                     if (hasSingleLink) {
@@ -76,7 +76,6 @@ export function Modal(props: ModalProps) {
                     }
                     setHasSingleLink(hasSingleLink);
                 } catch (e) {
-                    debugger
                     setLoading(false);
                     setFetched(true);
                     setErrorMessage(props.text.something_went_wrong);
@@ -86,11 +85,10 @@ export function Modal(props: ModalProps) {
             initLinks();
         });
     };
-    // debugger
-    getLinksIfNeeded();
+    // getLinksIfNeeded();
 
     const rightSelected = mobile ? displayQRCode : !displayQRCode;
-    debugger
+
     return (
         <div id={WALLETCONNECT_MODAL_ID} className="walletconnect-qrcode__base animated fadeIn">
             <div className="walletconnect-modal__base">
