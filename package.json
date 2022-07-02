@@ -1,0 +1,61 @@
+{
+  "name": "web3-qrcode-modal",
+  "version": "1.0.5",
+  "description": "QR Code Modal for WalletConnect",
+  "scripts": {
+    "start": "node config/esserve.js ",
+    "ts-types": " tsc --emitDeclarationOnly --outDir lib",
+    "build": "rm -rf lib && node ./config/esbuild.js && npm run ts-types",
+    "deploy": "gh-pages -d example/public",
+    "release": "npm publish && git tag $npm_package_version && git push --tag"
+  },
+  "keywords": [
+    "wallet",
+    "walletconnect",
+    "ethereum",
+    "jsonrpc",
+    "mobile",
+    "qrcode",
+    "web3",
+    "crypto",
+    "cryptocurrency",
+    "dapp"
+  ],
+  "author": "WalletConnect, Inc. <walletconnect.com>",
+  "homepage": "https://web3w.github.io/web3-qrcode-modal",
+  "license": "Apache-2.0",
+  "source": "src/index.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web3w/web3-qrcode-modal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/web3w/web3-qrcode-modal/issues"
+  },
+  "devDependencies": {
+    "@types/node": "12.12.14",
+    "@types/qrcode": "^1.4.2",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "esbuild": "^0.14.48",
+    "esbuild-plugin-inline-image": "^0.0.8",
+    "gh-pages": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-node": "10.8.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "copy-to-clipboard": "^3.3.1",
+    "detect-browser": "^5.3.0",
+    "qrcode": "1.5.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
